@@ -26,15 +26,20 @@ def newton_forward(x, y, t):
         val += (term * D[0][i]) / factorial(i)
     return val
 
-x = [0, 1, 2, 3]
-y = [1, 2, 4, 8]
 
-x_vals = np.linspace(0, 3, 100)
-y_vals = [newton_forward(x, y, t) for t in x_vals]
+if __name__ == "__main__":
+    import numpy as np
+    import matplotlib.pyplot as plt
 
-plt.plot(x_vals, y_vals)
-plt.scatter(x, y)
+    x = [0, 1, 2, 3]
+    y = [1, 2, 4, 8]
 
-plt.title("Newton Forward Interpolation")
-plt.grid()
-plt.show()
+    x_vals = np.linspace(0, 3, 100)
+    y_vals = [newton_forward(x, y, t) for t in x_vals]
+
+    plt.plot(x_vals, y_vals)
+    plt.scatter(x, y)
+
+    plt.title("Newton Forward Interpolation")
+    plt.grid()
+    plt.show()

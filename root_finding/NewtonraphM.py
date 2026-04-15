@@ -1,5 +1,3 @@
-import numpy as np
-import matplotlib.pyplot as plt
 
 def newton(x, f, df, tol):
     points = [x]
@@ -10,18 +8,25 @@ def newton(x, f, df, tol):
 
     return x, points
 
-f = lambda x: x**3 - x - 2
-df = lambda x: 3*x**2 - 1
 
-root, points = newton(1.5, f, df, 0.001)
 
-x_vals = np.linspace(0, 3, 100)
-y_vals = f(x_vals)
 
-plt.plot(x_vals, y_vals)
-plt.axhline(0)
-plt.scatter(points, [f(p) for p in points])
+if __name__ == "__main__":
+    import numpy as np
+    import matplotlib.pyplot as plt
 
-plt.title("Newton-Raphson Method")
-plt.grid()
-plt.show()
+    f = lambda x: x**3 - x - 2
+    df = lambda x: 3*x**2 - 1
+
+    root, points = newton(1.5, f, df, 0.001)
+
+    x_vals = np.linspace(0, 3, 100)
+    y_vals = f(x_vals)
+
+    plt.plot(x_vals, y_vals)
+    plt.axhline(0)
+    plt.scatter(points, [f(p) for p in points])
+
+    plt.title("Newton-Raphson Method")
+    plt.grid()
+    plt.show()

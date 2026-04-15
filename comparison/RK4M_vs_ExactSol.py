@@ -1,5 +1,4 @@
-import numpy as np
-import matplotlib.pyplot as plt
+
 
 def rk4(x0, y0, f, h, n):
     x = [x0]
@@ -16,17 +15,22 @@ def rk4(x0, y0, f, h, n):
 
     return x, y
 
-f = lambda x, y: x + y
-exact = lambda x: np.exp(x) - x - 1
 
-x_rk, y_rk = rk4(0, 1, f, 0.1, 20)
+if __name__ == "__main__":
+    import numpy as np
+    import matplotlib.pyplot as plt
 
-x_vals = np.linspace(0, 2, 100)
+    f = lambda x, y: x + y
+    exact = lambda x: np.exp(x) - x - 1
 
-plt.plot(x_vals, exact(x_vals), label="Exact")
-plt.plot(x_rk, y_rk, marker='o', label="RK4")
+    x_rk, y_rk = rk4(0, 1, f, 0.1, 20)
 
-plt.legend()
-plt.title("RK4 vs Exact Solution")
-plt.grid()
-plt.show()
+    x_vals = np.linspace(0, 2, 100)
+
+    plt.plot(x_vals, exact(x_vals), label="Exact")
+    plt.plot(x_rk, y_rk, marker='o', label="RK4")
+
+    plt.legend()
+    plt.title("RK4 vs Exact Solution")
+    plt.grid()
+    plt.show()
