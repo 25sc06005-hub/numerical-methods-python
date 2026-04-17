@@ -1,5 +1,5 @@
 
-def newton(x, f, df, tol):
+def newtonraph(x, f, df, tol):
     points = [x]
 
     while abs(f(x)) > tol:
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     f = lambda x: x**3 - x - 2
     df = lambda x: 3*x**2 - 1
 
-    root, points = newton(1.5, f, df, 0.001)
+    root, points = newtonraph(1.5, f, df, 0.001)
 
     x_vals = np.linspace(0, 3, 100)
     y_vals = f(x_vals)

@@ -1,17 +1,18 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def lagrange(x, y, t):
+def lagrange_vec(x, y, t):
+    x = np.array(x)
+    y = np.array(y)
     n = len(x)
     val = 0
     for i in range(n):
-        L = 1
-        for j in range(n):
-            if i != j:
-                L *= (t - x[j]) / (x[i] - x[j])
+        # Create a list of all x values except the current x[i]
+        others = np.delete(x, i)
+        # Calculate the basis polynomial L_i(t) in one line
+        L = np.prod((t - others) / (x[i] - others))
         val += y[i] * L
     return val
-
 
 if __name__ == "__main__":
     x = [1, 2, 3, 4]
