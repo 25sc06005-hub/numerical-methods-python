@@ -69,30 +69,30 @@ This project includes graphical representations such as:
 numerical-methods-python/
 │
 ├── root_finding/
-│   ├── BisectionM.py
-│   ├── Regulafalsi.py
-│   ├── SecantM.py
-│   ├── NewtonraphM.py
+│   ├── bisection.py
+│   ├── regula_falsi.py
+│   ├── secant.py
+│   ├── newton_raphson.py
 │
 ├── interpolation/
-│   ├── Lagrange.py
-│   ├── NFDIM.py
-│   ├── NBDIM.py
-│   ├── DDIM.py
-│   ├── DDtable.py
-│   ├── Difftable.py
+│   ├── lagrange.py
+│   ├── newton_forward.py
+│   ├── newton_backward.py
+│   ├── newton_divided.py
+│   ├── difftable.py
+│   ├── divided_diff_table.py
 │
 ├── integration/
-│   ├── TrapM.py
-│   ├── Simp13.py
-│   ├── Simp38.py
+│   ├── trapezoidal.py
+│   ├── simpson_13.py
+│   ├── simpson_38.py
 │
 ├── ode/
-│   ├── EulerM.py
-│   ├── RK4M.py
+│   ├── euler.py
+│   ├── rk4.py
 │
 ├── comparison/
-│   ├── Euler_vs_RK4M.py
+│   ├── Euler_vs_RK4.py
 │   ├── RK4M_vs_ExactSol.py
 │
 ├── README.md
@@ -128,14 +128,6 @@ python bisection_plot.py
 
 ---
 
-## 📈 Future Improvements
-
-* Add error analysis for each method
-* Compare performance (time complexity)
-* Add interactive visualizations
-* Extend to real-world datasets
-
----
 
 ## 👨‍💻 Author
 
