@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def lagrange_vec(x, y, t):
+def lagrange(x, y, t):
     x = np.array(x)
     y = np.array(y)
     n = len(x)
